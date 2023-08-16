@@ -40,7 +40,7 @@ For each test case, output a single line containing the equation in the format:
 
 ## 样例 #1
 
-### 样例输入 #1
+###  样例输入 #1
 
 ```
 3
@@ -49,7 +49,7 @@ For each test case, output a single line containing the equation in the format:
 24
 ```
 
-### 样例输出 #1
+###  样例输出 #1
 
 ```
 IMPOSSIBLE
