@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "g++",
+            "command": "C:\\Program Files (x86)\\Dev-Cpp\\MinGW32\\bin\\g++.exe",//修改此处的地址
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\std.exe"
+            ],
+            "options": {
+                "cwd": "C:\\Program Files (x86)\\Dev-Cpp\\MinGW32\\bin"//修改此处的地址(注意:bin是文件夹)
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group":{
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "调试器生成的任务。"
+        },
+    ],
+    
+}

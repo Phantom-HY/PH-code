@@ -1,0 +1,1 @@
+pyinstaller -F -i ./xxx.ico xxx.py //-w去除黑框

@@ -1,0 +1,51 @@
+<HTML>
+
+<head>
+    <title>
+        PHOJ用户档案
+    </title>
+    <form action="" method="" name="">
+    <fieldset>
+        <legend>
+            PHOJ用户档案
+        </legend>
+        <label for="userName">
+            姓名:
+        </label>
+        <input type="text" name="userName" id="userName" placeholder="请输入用户名"> <br>
+        <label for="userPhone">
+            手机号码:
+        </label>
+        <input type="tel" name="userPhone" id="userPhone" pattern="^1\d{10}$"><br>
+        <label for="email">
+            邮箱地址:
+        </label>
+        <input type="email" required name="email" id="email"><br>
+        <label for="collage">
+            所属分类:
+        </label>
+        <input type="text" name="collage" id="collage" list="cList" placeholder="请选择"><br>
+        <datalist id="cList">
+            <option value="PY创造"></option>
+            <option value="PH开发"></option>
+            <option value="HY算法"></option>
+        </datalist>
+        <label for="collage">
+            所属级别:
+        </label>
+        <input type="number" max="10" min="1" value="0" id="score"><br>
+        <br>
+        <label for="score">
+            测试成绩:
+        </label>
+        <input type="number" max="1000" min="0" value="0" id="score"><br>
+        <label for="score">
+            测试日期:
+        </label>
+        <input type="date" id="inTime" name="inTime"><br>
+        <input type="submit">
+    </fieldset>
+    </form>
+    </body>
+
+</HTML>

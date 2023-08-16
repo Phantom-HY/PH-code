@@ -1,0 +1,389 @@
+{
+    "并查集":{
+        "scope": "cpp",
+        "prefix": "find",
+        "body": [
+            "int f[100005], n, m;",
+            "void init()",
+            "{",
+            "    for (int i = 1; i <= n; i++)",
+            "        f[i] = i;",
+            "}",
+            "int find(int x)",
+            "{",
+            "    if (f[x] == x)",
+            "        return x;",
+            "    return f[x] = find(f[x]);",
+            "}",
+            "void merge(int x, int y)",
+            "{",
+            "    int fx = find(x);",
+            "    int fy = find(y);",
+            "    if (fx != fy)",
+            "        f[fx] = fy;",
+            "}",
+        ]
+    },
+    "PreTree,InTree求PostTree":{
+        "scope": "cpp",
+        "prefix": "PostTree",
+        "body": [
+            "struct Tree",
+            "{",
+            "    char data;",
+            "    Tree *l, *r;",
+            "};",
+            "string pre, in; // pre前序 in中序",
+            "int pos;",
+            "Tree *build_PostTree(int l, int r) // 求后序",
+            "{",
+            "    if (l > r)",
+            "        return NULL;",
+            "    Tree *root = new Tree();",
+            "    int p = in.find(root->data = pre[pos++]);",
+            "    root->l = build_PostTree(l, p - 1);",
+            "    root->r = build_PostTree(p + 1, r);",
+            "    return root;",
+            "}",
+        ]
+    },
+    "PostTree,InTree求PreTree":{
+        "scope": "cpp",
+        "prefix": "PreTree",
+        "body": [
+            "struct Tree",
+            "{",
+            "    char data;",
+            "    Tree *l, *r;",
+            "};",
+            "string in,post; // post后序 in中序",
+            "int pos;",
+            "Tree *build_PreTree(int l, int r) // 求后序",
+            "{",
+            "    if (l > r)",
+            "        return NULL;",
+            "    Tree *root = new Tree();",
+            "    int p = in.find(root->data = post[pos--]);",
+            "    root->r = build_PreTree(p + 1, r);",
+            "    root->l = build_PreTree(l, p - 1);",
+            "    return root;",
+            "}",
+        ]
+    },
+    "链式前向星": {
+        "scope": "cpp",
+        "prefix": "Edge",
+        "body": [
+			"struct Edge",
+			"{",
+			"    int u, v, w, net;",
+			"} e[100005];",
+			"int n, m, head[100005], pos, u, v, w;",
+			"void addEdge(int u, int v, int w)",
+			"{",
+			"    e[++pos] = {u, v, w, head[u]};",
+			"    head[u] = pos;",
+			"}"
+        ]
+    },
+    "c++文本读入输出":{
+		"scope": "cpp",
+		"prefix": "fre",
+		"body": [
+			"#ifndef ONLINE_JUDGE",
+			"    freopen(\"data.in\", \"r\", stdin);",
+			"    freopen(\"data.out\", \"w\", stdout);",
+			"#endif"
+		]
+	},
+    "方向数组(4个方向)":{
+		"scope": "cpp",
+		"prefix": "fx_4",
+		"body": [
+			"int fx_4[4][2] = {{1, 0}, {0, 1}, {0, -1}, {-1, 0}};"
+		]
+	},
+    "方向数组(8个方向)":{
+		"scope": "cpp",
+		"prefix": "fx_8",
+		"body": [
+			"int fx_8[8][2] = {{1, 1}, {1, 0}, {1, -1}, {0, 1}, {0, -1}, {-1, 1}, {-1, 0}, {-1, -1}};"
+		]
+	},
+    "得到InTree":{
+		"scope": "cpp",
+        "prefix": "GetInT",
+        "body": [
+            "void Get_InTree(Tree *root)",
+            "{",
+            "    if (root == NULL)",
+            "        return;",
+            "    Get_InTree(root->l);",
+            "    cout << root->data;",
+            "    Get_InTree(root->r);",
+            "}"
+        ]
+    },
+    "得到PostTree":{
+		"scope": "cpp",
+        "prefix": "GetPostT",
+        "body": [
+            "void Get_PostTree(Tree *root)",
+            "{",
+            "    if (root == NULL)",
+            "        return;",
+            "    Get_PostTree(root->l);",
+            "    Get_PostTree(root->r);",
+            "    cout << root->data;",
+            "}"
+        ]
+    },
+    "得到PreTree":{
+		"scope": "cpp",
+        "prefix": "GetPreT",
+        "body": [
+            "void Get_PreTree(Tree *root)",
+            "{",
+            "    if (root == NULL)",
+            "        return;",
+            "    cout << root->data;",
+            "    Get_PreTree(root->l);",
+            "    Get_PreTree(root->r);",
+            "}"
+        ]
+    },
+    "常用c++模板": {
+        "scope": "cpp",
+        "prefix": "HY",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "using namespace std;",
+            "typedef long long ll;",
+            "int main(){",
+            "    ",
+            "    system(\"pause\");",
+            "    return 0;",
+            "}"
+        ]
+    },
+    "max(ll a, ll b)":{
+		"scope": "cpp",
+		"prefix": "maxx",
+		"body": [
+			"ll max(ll a,ll b)",
+			"{",
+			"   return a>b?a:b;",
+			"}"
+		]
+	},
+    "min(ll a,ll b)":{
+		"scope": "cpp",
+		"prefix": "minx",
+		"body": [
+			"ll min(ll a,ll b)",
+			"{",
+			"   return a>b?b:a;",
+			"}"
+		]
+	},
+    "常用c++模板(fre)": {
+		"scope": "cpp",
+        "prefix": "PH",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "using namespace std;",
+            "typedef long long ll;",
+            "",
+            "int main(){",
+            "#ifndef ONLINE_JUDGE",
+            "    freopen(\"data.in\", \"r\", stdin);",
+            "    // freopen(\"data.out\", \"w\", stdout);",
+            "#endif",
+            "    ",
+            "    return 0;",
+            "}"
+        ]
+    },
+    "快速幂":{
+		"scope": "cpp",
+		"prefix": "qpow",
+		"body": [
+			"ll qpow(ll a,ll b,ll MOD)",
+			"{",
+			"   ll ans=1;",
+			"   while(b)",
+			"   {",
+			"      if(b&1)",
+			"         ans=ans*a%MOD;",
+			"      a=a*a%MOD,b>>=1;",
+			"   }",
+			"   return ans;",
+			"}"
+		]
+	},
+    "c++快读":{
+		"scope": "cpp",
+		"prefix": "read",
+		"body": [
+			"int read()",
+			"{",
+			"    int x = 0, f = 1;",
+			"    char ch = getchar();",
+			"    while (ch < '0' || ch > '9')",
+			"    {",
+			"        if (ch == '-')",
+			"            f = -1;",
+			"        ch = getchar();",
+			"    }",
+			"    while (ch >= '0' && ch <= '9')",
+			"    {",
+			"        x = (x << 1) + (x << 3) + (ch ^ 48);",
+			"        ch = getchar();",
+			"    }",
+			"    return x * f;",
+			"}"
+		]
+	},
+    "SPFA算法":{
+		"scope": "cpp",
+		"prefix": "SPFA",
+		"body": [
+            "void SPFA(int s)",
+            "{",
+            "    memset(vis, false, sizeof vis);",
+            "    memset(dis, 0x3f, sizeof dis);",
+            "    dis[s] = 0;",
+            "    queue<int> q;",
+            "    q.push(s);",
+            "    while (q.size())",
+            "    {",
+            "        int u = q.front();",
+            "        q.pop();",
+            "        vis[u] = false;",
+            "        for (int i = head[u]; i; i = e[i].net)",
+            "        {",
+            "            int v = e[i].v, w = e[i].w;",
+            "            if (dis[v] > dis[u] + w)",
+            "            {",
+            "                dis[v] = dis[u] + w;",
+            "                if (!vis[v])",
+            "                    vis[v] = true, q.push(v);",
+            "            }",
+            "        }",
+            "    }",
+            "}",
+		]
+	},
+    "Floyd算法": {
+		"scope": "cpp",
+		"prefix": "Floyd",
+		"body": [
+			"for (int k = 1; k <= n; k++)",
+			"    for (int i = 1; i <= n; i++)",
+			"        for (int j = 1; j <= m; j++)",
+			"            dis[i][j] = min(dis[i][j], dis[i][k] + dis[k][j]);"
+		],
+	},
+    "BellManFord算法": {
+		"scope": "cpp",
+		"prefix": "BellM",
+		"body": [
+            "bool vis[100001];",
+            "void BellmanFord(int st)",
+            "{",
+            "    memset(dis, 0x3f, sizeof dis);",
+            "    dis[st] = 0;",
+            "    for (int i = 0; i < n - 1; i++)",
+            "        for (int j = 1; j <= pos; j++)",
+            "        {",
+            "            int u = e[j].u, v = e[j].v, w = e[j].w;",
+            "            dis[v] = min(dis[v], dis[u] + w);",
+            "        }",
+            "}",
+        ]
+    },
+    "Dijkstra算法": {
+		"scope": "cpp",
+		"prefix": "Dijkstra",
+		"body": [
+            "void Dijkstra(int st, int et)",
+            "{",
+            "    memset(dis, 0x3f, sizeof dis);",
+            "    memset(vis, false, sizeof vis);",
+            "    dis[st] = 0;",
+            "    for (int t = 1; t < n; t++)",
+            "    {",
+            "        int u = 0;",
+            "       for (int j = 1; j <= n; j++) //找到未被使用过且当前最短路长度最小的顶点",
+            "            if (!vis[j] && dis[u] > dis[j])",
+            "               u = j;",
+            "       vis[u] = true;",
+            "       for (int i = head[u]; i; i = e[i].next) //以u为起点更新所有相连的点的最短路径长度",
+            "       {",
+            "           int v = e[i].v, w = e[i].w;",
+            "          dis[v] = min(dis[v], dis[u] + w);",
+            "        }",
+            "    }",
+            "}",
+        ]
+    },
+    "优先队列优化Dijkstra":{
+		"scope": "cpp",
+		"prefix": "Dijkstra",
+		"body": [
+            "void Dijkstra(int st)",
+            "{",
+            "    memset(dis, 0x3f, sizeof dis);",
+            "    memset(vis, false, sizeof vis);",
+            "    dis[st] = 0;",
+            "    priority_queue<node> q;",
+            "    q.push({0, st});",
+            "    while (!q.empty())",
+            "    {",
+            "        int u = q.top().v; //每次取出当前最短路长度最小的点",
+            "                    q.pop();",
+            "        if (vis[u])",
+            "            continue;",
+            "        vis[u] = true;",
+            "        for (int i = head[u]; i; i = e[i].next) //以u为起点更新所有相连的点的最短路径长度",
+            "       {",
+            "           int v = e[i].v, w = e[i].w;",
+            "           if (dis[v] > dis[u] + w)",
+            "           {",
+            "               dis[v] = dis[u] + w;",
+            "               q.push({dis[v], v});",
+            "           }",
+            "       }",
+            "   }",
+            "}",
+        ]
+    },
+    "TopoSort-拓扑排序": {
+		"scope": "cpp",
+		"prefix": "TopoSort",
+		"body": [
+			"int d[100005];",
+            "void TopoSort()",
+            "{",
+            "    // priority_queue<int, vector<int>, greater<int>> q;",
+            "    queue<int> q",
+            "    for (int i = 1; i <= n; i++)",
+            "        if (d[i] == 0)",
+            "        q.push(i);",
+            "    while (!q.empty())",
+            "    {",
+            "        int u = q.top();",
+            "        q.pop();",
+            "        // printf(\"%d \", u);",
+            "        for (int i = head[u]; i; i = e[i].net)",
+            "        {",
+            "            int v = e[i].v;",
+            "            d[v]--;",
+            "            if (d[v] == 0)",
+            "            q.push(v);",
+            "        }",
+            "    }",
+            "}",
+        ]
+    },
+}

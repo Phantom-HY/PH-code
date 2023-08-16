@@ -1,0 +1,17 @@
+{
+    "bat对拍":{
+		"scope": "bat",
+		"prefix": "BHY",
+		"body": [
+			"@echo off",
+			":loop",
+			"    \\IF\\Random\\std.exe> data.in",
+			"    \\IF\\std\\std.exe < data.in > std.answer",
+			"    \\IF\\me\\std.exe < data.in > me.answer",
+			"    std.answer me.answer",
+			"    if not errorlevel 1 goto loop",
+			"pause",
+			"goto loop"
+		]
+	}
+}
