@@ -1,14 +1,18 @@
 {
     "bat对拍":{
 		"scope": "bat",
-		"prefix": "BHY",
+		"prefix": "check",
 		"body": [
 			"@echo off",
+			"cd %~dp0",
 			":loop",
-			"    \\IF\\Random\\std.exe> data.in",
-			"    \\IF\\std\\std.exe < data.in > std.answer",
-			"    \\IF\\me\\std.exe < data.in > me.answer",
-			"    std.answer me.answer",
+			"    @REM Random生成样例",
+			"    @REM std暴力代码",
+			"    @REM me自己要测试的代码",
+			"    Random\\std.exe> data.in",
+			"    std\\std.exe < data.in > std.answer",
+			"    me\\std.exe < data.in > me.answer",
+			"    fc std.answer me.answer",
 			"    if not errorlevel 1 goto loop",
 			"pause",
 			"goto loop"
