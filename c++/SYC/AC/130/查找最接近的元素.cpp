@@ -28,10 +28,10 @@ int main()
         }
         else
         {
-            if (abs(a[i]-x)<abs(a[i-1]-x))
-                printf("%d\n",a[i]);
+            if (abs(a[i] - x) < abs(a[i - 1] - x))
+                printf("%d\n", a[i]);
             else
-                printf("%d\n",a[i-1]);
+                printf("%d\n", a[i - 1]);
         }
     }
     return 0;

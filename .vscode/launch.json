@@ -29,11 +29,6 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true
-        },
-        {
-            "name":"Bat:run",
-            "type": "bat",
-            "cwd": "${fileDirname}"
         }
     ]
 }
