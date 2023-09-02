@@ -1,0 +1,21 @@
+{
+    "\"%d\"":{
+        "scope": "cpp",
+        "prefix": "d1",
+        "body": [
+            "#define d1 \"%d\""
+        ]
+    },"\"%d%d\"":{
+        "scope": "cpp",
+        "prefix": "d2",
+        "body": [
+            "#define d2 \"%d%d\""
+        ]
+    },"\"%d%d%d\"":{
+        "scope": "cpp",
+        "prefix": "d3",
+        "body": [
+            "#define d3 \"%d%d%d\""
+        ]
+    },
+}
