@@ -59,6 +59,6 @@ int main()
         }
     sort(v + 1, v + 10);
     dfs(1, 1, 0);
-    printf("%d", ans);
+    printf("%d", ans == 0 ? -1 : ans);
     return 0;
 }
