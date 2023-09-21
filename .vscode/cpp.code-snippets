@@ -418,4 +418,21 @@
             "}",
         ]
     },
+    "逆序对":{
+        "scope": "cpp",
+        "prefix": "count",
+        "body": [
+            "int countInversions(int (&a)[], int len)"
+            "{"
+            "    int count = 0;"
+            "    for (int i = 0; i < len - 1; i++) {"
+            "        for (int j = i + 1; j < len; j++) {"
+            "            if (a[i] > a[j])"
+            "                count++;"
+            "        }"
+            "    }"
+            "    return count;"
+            "}"           
+        ]
+    },
 }
