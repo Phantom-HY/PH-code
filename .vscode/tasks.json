@@ -7,6 +7,7 @@
             "command": "C:\\Program Files (x86)\\Dev-Cpp\\MinGW32\\bin\\g++.exe",//修改此处的地址
             "args": [
                 "-fdiagnostics-color=always",
+                "-O2",
                 "-g",
                 "${file}",
                 "-o",
