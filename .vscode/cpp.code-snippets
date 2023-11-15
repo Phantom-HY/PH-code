@@ -1,7 +1,7 @@
 {
     "并查集":{
         "scope": "cpp",
-        "prefix": "find",
+        "prefix": "$find",
         "body": [
             "int f[100005], n, m;",
             "void init()",
@@ -26,7 +26,7 @@
     },
     "PreTree,InTree求PostTree":{
         "scope": "cpp",
-        "prefix": "PostTree",
+        "prefix": "$PostTree",
         "body": [
             "struct Tree",
             "{",
@@ -49,7 +49,7 @@
     },
     "PostTree,InTree求PreTree":{
         "scope": "cpp",
-        "prefix": "PreTree",
+        "prefix": "$PreTree",
         "body": [
             "struct Tree",
             "{",
@@ -72,7 +72,7 @@
     },
     "链式前向星": {
         "scope": "cpp",
-        "prefix": "Edge",
+        "prefix": "$Edge",
         "body": [
 			"struct Edge",
 			"{",
@@ -88,7 +88,7 @@
     },
     "c++文本读入输出":{
 		"scope": "cpp",
-		"prefix": "fre",
+		"prefix": "$fre",
 		"body": [
 			"#ifndef ONLINE_JUDGE",
 			"    freopen(\"data.in\", \"r\", stdin);",
@@ -98,21 +98,21 @@
 	},
     "方向数组(4个方向)":{
 		"scope": "cpp",
-		"prefix": "fx_4",
+		"prefix": "$fx_4",
 		"body": [
 			"int fx_4[4][2] = {{1, 0}, {0, 1}, {0, -1}, {-1, 0}};"
 		]
 	},
     "方向数组(8个方向)":{
 		"scope": "cpp",
-		"prefix": "fx_8",
+		"prefix": "$fx_8",
 		"body": [
 			"int fx_8[8][2] = {{1, 1}, {1, 0}, {1, -1}, {0, 1}, {0, -1}, {-1, 1}, {-1, 0}, {-1, -1}};"
 		]
 	},
     "得到InTree":{
 		"scope": "cpp",
-        "prefix": "GetInT",
+        "prefix": "$GetInT",
         "body": [
             "void Get_InTree(Tree *root)",
             "{",
@@ -126,7 +126,7 @@
     },
     "得到PostTree":{
 		"scope": "cpp",
-        "prefix": "GetPostT",
+        "prefix": "$GetPostT",
         "body": [
             "void Get_PostTree(Tree *root)",
             "{",
@@ -140,7 +140,7 @@
     },
     "得到PreTree":{
 		"scope": "cpp",
-        "prefix": "GetPreT",
+        "prefix": "$GetPreT",
         "body": [
             "void Get_PreTree(Tree *root)",
             "{",
@@ -154,7 +154,7 @@
     },
     "常用c++模板": {
         "scope": "cpp",
-        "prefix": "HY",
+        "prefix": "$HY",
         "body": [
             "#include <bits/stdc++.h>",
             "using namespace std;",
@@ -168,7 +168,7 @@
     },
     "max(ll a, ll b)":{
 		"scope": "cpp",
-		"prefix": "maxx",
+		"prefix": "$maxx",
 		"body": [
 			"ll max(ll a,ll b)",
 			"{",
@@ -178,7 +178,7 @@
 	},
     "min(ll a,ll b)":{
 		"scope": "cpp",
-		"prefix": "minx",
+		"prefix": "$minx",
 		"body": [
 			"ll min(ll a,ll b)",
 			"{",
@@ -188,7 +188,7 @@
 	},
     "常用c++模板(fre)": {
 		"scope": "cpp",
-        "prefix": "PH",
+        "prefix": "$PH",
         "body": [
             "#include <bits/stdc++.h>",
             "using namespace std;",
@@ -206,7 +206,7 @@
     },
     "快速幂":{
 		"scope": "cpp",
-		"prefix": "qpow",
+		"prefix": "$qpow",
 		"body": [
 			"ll qpow(ll a,ll b,ll MOD)",
 			"{",
@@ -223,7 +223,7 @@
 	},
     "c++快读":{
 		"scope": "cpp",
-		"prefix": "read",
+		"prefix": "$read",
 		"body": [
 			"int read()",
 			"{",
@@ -246,7 +246,7 @@
 	},
     "SPFA算法":{
 		"scope": "cpp",
-		"prefix": "SPFA",
+		"prefix": "$SPFA",
 		"body": [
             "void SPFA(int s)",
             "{",
@@ -276,7 +276,7 @@
 	},
     "Floyd算法": {
 		"scope": "cpp",
-		"prefix": "Floyd",
+		"prefix": "$Floyd",
 		"body": [
 			"for (int k = 1; k <= n; k++)",
 			"    for (int i = 1; i <= n; i++)",
@@ -286,7 +286,7 @@
 	},
     "BellManFord算法": {
 		"scope": "cpp",
-		"prefix": "BellM",
+		"prefix": "$BellM",
 		"body": [
             "bool vis[100001];",
             "void BellmanFord(int st)",
@@ -304,7 +304,7 @@
     },
     "Dijkstra算法": {
 		"scope": "cpp",
-		"prefix": "Dijkstra",
+		"prefix": "$Dijkstra",
 		"body": [
             "void Dijkstra(int st, int et)",
             "{",
@@ -329,7 +329,7 @@
     },
     "优先队列优化Dijkstra":{
 		"scope": "cpp",
-		"prefix": "Dijkstra",
+		"prefix": "$Dijkstra",
 		"body": [
             "void Dijkstra(int st)",
             "{",
@@ -360,7 +360,7 @@
     },
     "TopoSort-拓扑排序": {
 		"scope": "cpp",
-		"prefix": "TopoSort",
+		"prefix": "$TopoSort",
 		"body": [
 			"int d[100005];",
             "void TopoSort()",
@@ -389,7 +389,7 @@
     },
     "高精度加法":{
 		"scope": "cpp",
-		"prefix": "Hadd",
+		"prefix": "$Hadd",
 		"body": [
             "// 高精度加法(a,b为反向数字)",
             "string High_Add(string a, string b)",
@@ -420,7 +420,7 @@
     },
     "逆序对":{
         "scope": "cpp",
-        "prefix": "count",
+        "prefix": "$count",
         "body": [
             "int countInversions(int (&a)[], int len)"
             "{"
@@ -433,6 +433,107 @@
             "    }"
             "    return count;"
             "}"           
+        ]
+    },
+    "线段树-SegTree":{
+        "scope": "cpp",
+        "prefix": "$SegTree",
+        "body": [
+            "// SegTreeLazyRangAdd"
+            "template <typename T>"
+            "class SegTree"
+            "{"
+            "#define ls(p) (p << 1)"
+            "#define rs(p) (p << 1 | 1)"
+            "    vector<T> tree, tag;"
+            "    T *arr;"
+            "    int n;"
+            "    void pushup(int p)"
+            "    {"
+            "        tree[p] = tree[ls(p)] + tree[rs(p)];"
+            "    }"
+            "    void add(int p, int l, int r, T val)"
+            "    {"
+            "        tag[p] += val;"
+            "        tree[p] += (r - l + 1) * val;"
+            "    }"
+            "    void pushdown(int p, int l, int r)"
+            "    {"
+            "        if (tag[p])"
+            "        {"
+            "            int mid = (l + r) >> 1;"
+            "            add(ls(p), l, mid, tag[p]);"
+            "            add(rs(p), mid + 1, r, tag[p]);"
+            "            tag[p] = 0;"
+            "        }"
+            "    }"
+            "    void build(int p, int l, int r)"
+            "    {"
+            "        if (l == r)"
+            "        {"
+            "            tree[p] = arr[l];"
+            "            return;"
+            "        }"
+            "        int mid = (l + r) >> 1;"
+            "        build(ls(p), l, mid);"
+            "        build(rs(p), mid + 1, r);"
+            "        tree[p] = tree[ls(p)] + tree[rs(p)];"
+            "    }"
+            "    T range_sum(int p, int l, int r, int L, int R)"
+            "    {"
+            "        if (L > r || R < l)"
+            "            return 0;"
+            "        if (L <= l && r <= R)"
+            "            return tree[p];"
+            "        pushdown(p, l, r);"
+            "        int mid = (l + r) >> 1;"
+            "        T sum = 0;"
+            "        if (L <= mid)"
+            "            sum += range_sum(ls(p), l, mid, L, R);"
+            "        if (R > mid)"
+            "            sum += range_sum(rs(p), mid + 1, r, L, R);"
+            "        return sum;"
+            "    }"
+            "    void range_add(int p, int l, int r, int L, int R, T val)"
+            "    {"
+            "        if (L > r || R < l)"
+            "            return;"
+            "        if (L <= l && r <= R)"
+            "        {"
+            "            add(p, l, r, val);"
+            "            return;"
+            "        }"
+            "        pushdown(p, l, r);"
+            "        int mid = (l + r) >> 1;"
+            "        if (L <= mid)"
+            "            range_add(ls(p), l, mid, L, R, val);"
+            "        if (R > mid)"
+            "            range_add(rs(p), mid + 1, r, L, R, val);"
+            "        tree[p] = tree[ls(p)] + tree[rs(p)];"
+            "    }"
+            ""
+            "public:"
+            "    explicit SegTree<T>(T v[], int len)"
+            "    {"
+            "        n = len, arr = v;"
+            "        tree = vector<T>(n << 2 | 1, 0), tag = vector<T>(n << 2 | 1, 0);"
+            "        build(1, 1, n);"
+            "        arr = NULL;"
+            "    }"
+            "    void show(int p, int dep = 0)"
+            "    {"
+            "        if (p > (n << 2) || tree[p] == 0)"
+            "            return;"
+            "        show(ls(p), dep + 1);"
+            "        for (int i = 1; i <= dep; i++)"
+            "            printf(\"\\t\");"
+            "        printf(\"%d\\n\", tree[p]);"
+            "        show(rs(p), dep + 1);"
+            "    }"
+            "    T range_sum(int l, int r) { return range_sum(1, 1, n, l, r); }"
+            "    void range_add(int l, int r, T val) { range_add(1, 1, n, l, r, val); };"
+            "    void node_add(int p, T val) { range_add(1, 1, n, p, p, val); }"
+            "};"
         ]
     },
 }
