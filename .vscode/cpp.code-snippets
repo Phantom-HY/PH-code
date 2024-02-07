@@ -578,5 +578,113 @@
             "    }",
             "};",
         ]
+    },
+    "Tarjan-SCC":{
+        "scope":"cpp",
+        "prefix":"$tarjan",
+        "body":[
+            "int low[100005], dfn[100005], scc[100005], siz[100005];"
+            "int idx, cid, cur;"
+            "bool vis[100005];"
+            "stack<int> s;"
+            "void tarjan(int u)"
+            "{"
+            "    low[u] = dfn[u] = ++idx;"
+            "    s.push(u);"
+            "    vis[u] = true;"
+            "    for (int i = head[u]; i; i = e[i].net)"
+            "    {"
+            "        int v = e[i].v;"
+            "        if (!dfn[v])"
+            "        {"
+            "            tarjan(v);"
+            "            low[u] = min(low[u], low[v]);"
+            "        }"
+            "        else if (vis[v])"
+            "            low[u] = min(low[u], dfn[v]);"
+            "    }"
+            "    if (low[u] == dfn[u])"
+            "    {"
+            "        cid++;"
+            "        do"
+            "        {"
+            "            siz[cid]++;"
+            "            cur = s.top(), s.pop();"
+            "            vis[cur] = false;"
+            "            scc[cur] = cid;"
+            "        } while (cur != u);"
+            "    }"
+            "}"            
+        ]
+    },
+    "Tarjan-CutNode":{
+        "scope":"cpp",
+        "prefix":"$tarjan",
+        "body":[
+            "int dfn[100005], low[100005];"
+            "bool isCut[100005];"
+            "int idx, CutNum;"
+            "void tarjan(int u, int root)"
+            "{"
+            "    dfn[u] = low[u] = ++idx;"
+            "    int cnt = 0;"
+            "    for (int i = head[u]; i; i = e[i].net)"
+            "    {"
+            "        int v = e[i].v;"
+            "        if (!dfn[v])"
+            "        {"
+            "            tarjan(v, root);"
+            "            low[u] = min(low[u], low[v]);"
+            "            if (low[v] >= dfn[u] && (u != root || ++cnt > 1))"
+            "                CutNum += !isCut[u], isCut[u] = true;"
+            "        }"
+            "        else"
+            "            low[u] = min(low[u], dfn[v]);"
+            "    }"
+            "}"
+            "void CutNode()"
+            "{"
+            "    for (int i = 1; i <= n; i++)"
+            "        if (!dfn[i])"
+            "            tarjan(i, i);"
+            "}"            
+        ]
+    },
+    "Tarjan-CutBridge":{
+        "scope":"cpp",
+        "prefix":"$tarjan",
+        "body":[
+            "int dfn[100005], low[100005], idx;"
+            "void tarjan(int u, int eIdx)"
+            "{"
+            "    dfn[u] = low[u] = ++idx;"
+            "    for (int i = head[u]; i; i = e[i].net)"
+            "    {"
+            "        int v = e[i].v;"
+            "        if (!dfn[v])"
+            "        {"
+            "            tarjan(v, i);"
+            "            low[u] = min(low[u], low[v]);"
+            "            if (low[v] > dfn[u])"
+            "                CutBridge.push_back({u, v});"
+            "        }"
+            "        else if (i != (eIdx ^ 1))"
+            "            low[u] = min(low[u], dfn[v]);"
+            "    }"
+            "}"
+            "bool cmp(Edge a, Edge b)"
+            "{"
+            "    if (a.u != b.u)"
+            "        return a.u < b.u;"
+            "    return a.v < b.v;"
+            "}"
+            "void Cut_Bridge()"
+            "{"
+            "    for (int i = 1; i <= n; i++)"
+            "        if (!dfn[i])"
+            "            tarjan(i, 0);"
+            "    sort(CutBridge.begin(), CutBridge.end(), cmp);"
+            "}"
+        ]
     }
 }
