@@ -422,17 +422,17 @@
         "scope": "cpp",
         "prefix": "$count",
         "body": [
-            "int countInversions(int (&a)[], int len)"
-            "{"
-            "    int count = 0;"
-            "    for (int i = 0; i < len - 1; i++) {"
-            "        for (int j = i + 1; j < len; j++) {"
-            "            if (a[i] > a[j])"
-            "                count++;"
-            "        }"
-            "    }"
-            "    return count;"
-            "}"           
+            "int countInversions(int (&a)[], int len)",
+            "{",
+            "    int count = 0;",
+            "    for (int i = 0; i < len - 1; i++) {",
+            "        for (int j = i + 1; j < len; j++) {",
+            "            if (a[i] > a[j])",
+            "                count++;",
+            "        }",
+            "    }",
+            "    return count;",
+            "}" 
         ]
     },
     "线段树-SegTree":{
@@ -440,18 +440,18 @@
         "prefix": "$SegTree",
         "body": [
             "// SegTreeLazyRangAdd"
-            "template <typename T>"
-            "class SegTree"
-            "{"
-            "#define ls(p) (p << 1)"
-            "#define rs(p) (p << 1 | 1)"
-            "    vector<T> tree, tag;"
-            "    T *arr;"
-            "    int n;"
-            "    void pushup(int p)"
-            "    {"
-            "        tree[p] = tree[ls(p)] + tree[rs(p)];"
-            "    }"
+            "template <typename T>",
+            "class SegTree",
+            "{",
+            "#define ls(p) (p << 1)",
+            "#define rs(p) (p << 1 | 1)",
+            "    vector<T> tree, tag;",
+            "    T *arr;",
+            "    int n;",
+            "    void pushup(int p)",
+            "    {",
+            "        tree[p] = tree[ls(p)] + tree[rs(p)];",
+            "    }",
             "    void add(int p, int l, int r, T val)"
             "    {"
             "        tag[p] += val;"
@@ -477,7 +477,7 @@
             "        int mid = (l + r) >> 1;"
             "        build(ls(p), l, mid);"
             "        build(rs(p), mid + 1, r);"
-            "        tree[p] = tree[ls(p)] + tree[rs(p)];"
+            "        pushup(p);"
             "    }"
             "    T range_sum(int p, int l, int r, int L, int R)"
             "    {"
@@ -509,7 +509,7 @@
             "            range_add(ls(p), l, mid, L, R, val);"
             "        if (R > mid)"
             "            range_add(rs(p), mid + 1, r, L, R, val);"
-            "        tree[p] = tree[ls(p)] + tree[rs(p)];"
+            "        pushup(p);"
             "    }"
             ""
             "public:"
